@@ -1,4 +1,4 @@
-# Airflow Docker Compose Setup
+# Airflow 3.0.1 Docker Compose Setup
 
 This repository provides a battle-tested Docker Compose setup for Apache Airflow 3.0.1, backed by PostgreSQL, with optional pgAdmin for database management. It automates environment configuration, volume mounting, and user-permission handling to give you a zero-hassle local Airflow development environment.
 
@@ -13,8 +13,8 @@ This repository provides a battle-tested Docker Compose setup for Apache Airflow
 ### 1. Clone the repo
 ```shell
 
-git clone <your-repo-url>
-cd <your-repo-folder>
+git clone git@github.com:Jiansiyu/airflow_docker_compose.git
+cd airflow_docker_compose
 
 ```
 
