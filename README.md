@@ -22,8 +22,8 @@ cd airflow_docker_compose
 
 ```shell
 
-chmod +x start_docker.sh
-./start_docker.sh
+
+bash start_docker.sh
 
 ```
 
