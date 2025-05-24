@@ -146,6 +146,8 @@ services:
   airflow-scheduler:
     <<: *airflow-common
     command: scheduler
+    group_add:
+      - ${DOCKER_GID}
     ports: ["8793:8793"]
     healthcheck:
       test: [ "CMD", "curl", "--fail", "http://localhost:8974/health" ]
