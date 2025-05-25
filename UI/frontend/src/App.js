@@ -31,21 +31,21 @@ export default function App() {
         workflow: 'example_dag',
         status: 'success',
         stored_filename: 'example_run.rrd',
-        file_path: '${BASE_URL}/static/arkit_scenes.rrd',
+        file_path: `${BASE_URL}/static/arkit_scenes.rrd`,
       },
       {
         id: 2,
         workflow: 'data_pipeline',
         status: 'running',
         stored_filename: 'data_pipeline_run.rrd',
-        file_path: '${BASE_URL}/static/arkit_scenes.rrd',
+        file_path: `${BASE_URL}/static/arkit_scenes.rrd`,
       },
       {
         id: 3,
         workflow: 'analytics_job',
         status: 'failed',
         stored_filename: 'analytics_job_run.rrd',
-        file_path: '${BASE_URL}/static/arkit_scenes.rrd',
+        file_path: `${BASE_URL}/static/arkit_scenes.rrd`,
       },
     ];
     setRuns(mockRuns);
