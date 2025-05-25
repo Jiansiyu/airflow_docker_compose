@@ -59,5 +59,5 @@ COPY .env .env
 EXPOSE 8000
 
 # Command to run the FastAPI application
-COPY start.sh .
+COPY scripts/start.sh .
 CMD ["./start.sh"]

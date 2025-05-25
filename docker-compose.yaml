@@ -226,6 +226,37 @@ services:
       <<: *airflow-common-depends-on
 
 
+  local-eval-frontend:
+    build:
+      context: ./UI/frontend/
+      dockerfile: Dockerfile
+    container_name: local-eval-frontend
+    ports:
+      - 3000:80
+    env_file:
+      - .env
+    volumes:
+      - ./uploads:/app/uploads
+    depends_on:
+      local-eval-backend:
+        condition: service_completed_successfully
+
+
+  local-eval-backend:
+    build:
+      context: ./UI/backend/
+      dockerfile: Dockerfile
+    container_name: local-eval-backend
+    ports:
+      - 8000:8000
+    env_file:
+      - .env
+    volumes:
+      - ./uploads:/app/uploads
+    depends_on:
+        airflow-apiserver:
+            condition: service_completed_successfully
+
 
 volumes:
   postgres-db-volume:

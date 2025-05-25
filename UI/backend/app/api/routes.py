@@ -87,8 +87,8 @@ def get_dag_runs(dag_id: str):
 def get_jwt_token():
     auth_url = f"{settings.AIRFLOW_URL}/auth/token"
     credentials = {
-        "username": settings.AIRFLOW_USER,
-        "password": settings.AIRFLOW_PW
+        "username": settings.AIRFLOW_WWW_USER_USERNAME,
+        "password": settings.AIRFLOW_WWW_USER_PASSWORD
     }
     response = requests.post(auth_url, json=credentials)
     if response.status_code in [200, 201]:
