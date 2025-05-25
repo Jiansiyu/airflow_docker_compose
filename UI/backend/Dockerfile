@@ -20,9 +20,9 @@ COPY alembic.ini .
 COPY alembic/ ./alembic/
 COPY scripts/ ./scripts/
 COPY uploads/ ./uploads/
+COPY pyproject.toml .
 
 # Copy the .env file (if needed at runtime only, can also mount as a volume)
-COPY .env .env
 
 # Expose FastAPI port
 EXPOSE 8000
@@ -41,9 +41,7 @@ ENV PYTHONUNBUFFERED=1 \
 # Set the working directory
 WORKDIR /app
 
-# Copy the requirements and install
-COPY requirements.txt .
-RUN pip install -r requirements.txt
+
 
 # Copy the application code
 COPY app/ ./app/
@@ -51,9 +49,11 @@ COPY alembic.ini .
 COPY alembic/ ./alembic/
 COPY scripts/ ./scripts/
 COPY uploads/ ./uploads/
+COPY pyproject.toml .
 
-# Copy the .env file (if needed at runtime only, can also mount as a volume)
-COPY .env .env
+# Copy the requirements and install
+
+RUN pip install .
 
 # Expose FastAPI port
 EXPOSE 8000

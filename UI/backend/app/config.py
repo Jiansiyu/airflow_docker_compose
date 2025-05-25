@@ -13,12 +13,13 @@ class Settings(BaseSettings):
 
     AIRFLOW_URL: Optional[str] = "http://localhost:8080"
     AIRFLOW_WWW_USER_USERNAME: Optional[str] = None
-    AIRFLOW_WWW_USER_PASSWORD:Optional[str] = None
+    AIRFLOW_WWW_USER_PASSWORD: Optional[str] = None
 
 
     class Config:
         env_file = ".env"
         env_file_encoding = "utf-8"
+        extra = "ignore"
 
 settings = Settings()
 

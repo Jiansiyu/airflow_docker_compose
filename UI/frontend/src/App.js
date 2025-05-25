@@ -10,14 +10,15 @@ export default function App() {
   const [workflow, setWorkflow] = useState('');
   const [workflows, setWorkflows] = useState([]);
   const [runs, setRuns] = useState([]);
+  const BASE_URL = process.env.REACT_APP_BACKEND_BASE_URL;
 
   const fetchCategories = async () => {
-    const res = await axios.get('http://localhost:8000/eval/ceres/categories');
+    const res = await axios.get(`${BASE_URL}/eval/ceres/categories`);
     setCategories(res.data.categories);
   };
 
   const fetchWorkflows = async () => {
-    const res = await axios.get('http://localhost:8000/airflow/dags/list');
+    const res = await axios.get(`${BASE_URL}/airflow/dags/list`);
     setWorkflows(res.data.dags);
   };
 
@@ -58,7 +59,7 @@ export default function App() {
     formData.append('workflow', workflow);
 
     try {
-      const res = await axios.post('http://localhost:8000/upload', formData);
+      const res = await axios.post(`${BASE_URL}/upload`, formData);
       console.log(res.data);
       alert("Upload and DAG trigger successful!");
     } catch (err) {
