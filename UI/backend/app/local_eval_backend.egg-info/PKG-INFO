@@ -1,0 +1,21 @@
+Metadata-Version: 2.4
+Name: local_eval_backend
+Version: 0.1.0
+Summary: Local evaluation backend for the UI
+Requires-Python: >=3.9
+Requires-Dist: fastapi>=0.95.0
+Requires-Dist: uvicorn>=0.22.0
+Requires-Dist: sqlalchemy>=1.4.0
+Requires-Dist: psycopg2-binary>=2.9.0
+Requires-Dist: alembic>=1.7.0
+Requires-Dist: python-multipart>=0.0.5
+Requires-Dist: aiofiles>=23.1.0
+Requires-Dist: python-dotenv>=0.20.0
+Requires-Dist: pydantic>=1.10.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: pytest-asyncio>=0.16.0; extra == "dev"
+Requires-Dist: httpx>=0.23.0; extra == "dev"
+Requires-Dist: black>=22.3.0; extra == "dev"
+Requires-Dist: isort>=5.10.0; extra == "dev"
+Requires-Dist: mypy>=0.910; extra == "dev"
