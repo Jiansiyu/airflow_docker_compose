@@ -1,0 +1,40 @@
+<!-- public/replay.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Rerun Replay</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+        #viewer-container {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="viewer-container"></div>
+<script type="module">
+    import { WebViewer } from 'https://unpkg.com/@rerun-io/web-viewer?module';
+
+    const params = new URLSearchParams(window.location.search);
+    const rrdUrl = params.get('url');
+
+    if (!rrdUrl) {
+        document.body.innerHTML = '<p style="color:red;">No RRD file specified.</p>';
+    } else {
+        const parentElement = document.getElementById('viewer-container');
+        const viewer = new WebViewer();
+        viewer.start(rrdUrl, parentElement, {
+            width: '100%',
+            height: '100%',
+        });
+    }
+</script>
+</body>
+</html>
