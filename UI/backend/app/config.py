@@ -9,7 +9,6 @@ load_dotenv()  # take environment variables from .env
 
 class Settings(BaseSettings):
     DATABASE_URL: Optional[str]  = None
-
     # set up the airflow environment
 
     AIRFLOW_URL: Optional[str] = "http://localhost:8080"
