@@ -70,7 +70,7 @@ export default function App() {
 
   return (
       <div className="min-h-screen bg-gray-50 p-8">
-        <h1 className="text-2xl font-bold mb-4">Airflow Job Dashboard</h1>
+        <h1 className="text-2xl font-bold mb-4">Local Evaluation Dashboard</h1>
 
         <FileUploadForm
             onUpload={{ file, setFile, category, setCategory, workflow, setWorkflow, uploadAndStart }}
